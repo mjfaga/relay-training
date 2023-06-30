@@ -16,7 +16,18 @@ export function User({userId}: Props) {
         user(id: $id) {
           id
           name
-          ...FavoriteFoodList_user
+          favoriteFoods(first: 10) @connection(key: "User_favoriteFoods") {
+            edges {
+              node {
+                id
+                foodItem {
+                  id
+                  name
+                }
+                eatingFrequency
+              }
+            }
+          }
         }
       }
     `
