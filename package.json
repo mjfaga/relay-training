@@ -17,11 +17,12 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently 'yarn:start:*'",
+    "start:app": "react-scripts start",
+    "start:mocks": "nodemon --config nodemon.mocks.json mocks/server.js",
+    "start:relay": "relay-compiler --watch",
     "build": "relay-compiler --validate && react-scripts build",
-    "eject": "react-scripts eject",
-    "relay": "relay-compiler --watch",
-    "mocks": "nodemon --config nodemon.mocks.json mocks/server.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +45,7 @@
     "@types/react-relay": "14.1.4",
     "@types/relay-runtime": "14.1.11",
     "babel-plugin-relay": "15.0.0",
+    "concurrently": "^8.2.0",
     "nodemon": "^2.0.22",
     "relay-compiler": "15.0.0"
   }
