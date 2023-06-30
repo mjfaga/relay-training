@@ -3,7 +3,7 @@ import graphql from 'babel-plugin-relay/macro';
 import type {PreloadedQuery} from 'react-relay';
 import {useQueryLoader, usePreloadedQuery} from 'react-relay';
 import UserQuery, {UserQuery as UserQueryType} from './__generated__/UserQuery.graphql';
-// import FavoriteFoodList from './FavoriteFoodList';
+import {FavoriteFoodList} from './FavoriteFoodList';
 
 type Props = {
   userId?: string;
@@ -16,7 +16,7 @@ export function User({userId}: Props) {
         user(id: $id) {
           id
           name
-          # ...FavoriteFoodList_user
+          ...FavoriteFoodList_user
         }
       }
     `
@@ -50,9 +50,7 @@ function UserDisplay({queryReference}: {queryReference: PreloadedQuery<UserQuery
         {data.user.name}
         &#39;s favorite foods:
       </h2>
-      {
-        // <FavoriteFoodList user={data.user} />
-      }
+      <FavoriteFoodList user={data.user} />
     </>
   );
 }

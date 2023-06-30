@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<3238ae4e01abac16fe9c14c4e72278b6>>
+ * @generated SignedSource<<21f645f1eed86c00d9dbf4cbd02a3de7>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -14,6 +14,7 @@ export type FavoriteFoodList_user$data = {
   readonly favoriteFoods: {
     readonly edges: ReadonlyArray<{
       readonly node: {
+        readonly id: string;
         readonly " $fragmentSpreads": FragmentRefs<"FavoriteFoodItem_favoriteFoodItem">;
       } | null;
     } | null> | null;
@@ -66,6 +67,13 @@ const node: ReaderFragment = {
               "name": "node",
               "plural": false,
               "selections": [
+                {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "id",
+                  "storageKey": null
+                },
                 {
                   "args": null,
                   "kind": "FragmentSpread",
@@ -124,6 +132,6 @@ const node: ReaderFragment = {
   "abstractKey": null
 };
 
-(node as any).hash = "008fe715fb8190f1958309a06f9cd625";
+(node as any).hash = "357824dad9476636fc86b4e7e5aa0352";
 
 export default node;
