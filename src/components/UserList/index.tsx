@@ -35,7 +35,7 @@ export function UserList() {
 function UserListDisplay({queryReference}: {queryReference: PreloadedQuery<UserListQueryType>}) {
   const data = usePreloadedQuery<UserListQueryType>(UserListQuery, queryReference);
 
-  if (!data.users) return <>'Something went wrong!!'</>; // should be error logging stuff here
+  if (!data.users) return <>Something went wrong!!</>; // should be error logging stuff here
   if (data.users.length === 0) return <div>You don&#39;t have any users yet!</div>;
 
   return (
