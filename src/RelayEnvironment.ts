@@ -11,6 +11,7 @@ const fetchFn: FetchFunction = async (request, variables) => {
       // <-- Additional headers like 'Authorization' would go here
     },
     body: JSON.stringify({
+      operationName: request.name,
       query: request.text, // <-- The GraphQL document composed by Relay
       variables,
     }),

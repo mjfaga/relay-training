@@ -1,13 +1,15 @@
-import {Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import UserListPage from './pages/UserListPage';
-import UserPage from './pages/UserPage';
+// import UserPage from './pages/UserPage';
 
-const AppBody = () => <>hi</>;
-// const AppBody = () => (
-//   <div className="App-body">
-//     <Route exact path="/" component={UserListPage} />
-//     <Route path="/user/:id" component={UserPage} />
-//   </div>
-// );
+const AppBody = () => (
+  <div className="App-body">
+    <Routes>
+      <Route path="/" Component={UserListPage} />
+      {/* <Route path="/" Component={UserListPage} /> */}
+      {/* <Route path="/user/:id" component={UserPage} /> */}
+    </Routes>
+  </div>
+);
 
 export default AppBody;
