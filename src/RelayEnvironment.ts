@@ -8,7 +8,7 @@ const fetchFn: FetchFunction = async (request, variables) => {
     headers: {
       Accept: 'application/graphql-response+json; charset=utf-8, application/json; charset=utf-8',
       'Content-Type': 'application/json',
-      // <-- Additional headers like 'Authorization' would go here
+      'mocking-sequence-id': '1',
     },
     body: JSON.stringify({
       operationName: request.name,
